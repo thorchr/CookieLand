@@ -102,9 +102,14 @@ add_action( 'widgets_init', 'cla_widgets_init' );
 function cla_scripts() {
 	wp_enqueue_style( 'cla-style', get_stylesheet_uri() );
 
+	// Hovedstilsett egenlaget
+	wp_enqueue_style('custom-styles', get_template_directory_uri() . '/style/css/style.css' );
+
 	wp_enqueue_script( 'cla-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'cla-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+
+	wp_enqueue_script('twitter-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js') ;
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
