@@ -1,0 +1,33 @@
+#site-navigation #menu-all-pages li.current-menu-item  a,
+#site-navigation #menu-all-pages li.current_page_parent a {
+	color: red;
+}
+
+#site-navigation #menu-all-pages li.current_page_parent ul a {
+	color: black;
+}
+
+#site-navigation #menu-all-pages li ul {
+	margin-top: 19px;
+}
+
+#site-navigation #menu-all-pages li.current-menu-item a {
+	color: red !important;
+}
+
+#site-navigation #menu-all-pages li a {
+	padding: 10px 20px;
+	background-color: #00FF1E;
+	color: black;
+}
+
+#secondary {
+	background-color: #f0cc59;
+	padding: 30px;
+	margin-top: 40px;
+}
+
+#secondary aside {
+	background-color: #597DF0;
+	margin-bottom: 20px;
+}

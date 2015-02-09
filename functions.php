@@ -46,7 +46,7 @@ function cla_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -103,13 +103,16 @@ function cla_scripts() {
 	wp_enqueue_style( 'cla-style', get_stylesheet_uri() );
 
 	// Hovedstilsett egenlaget
-	wp_enqueue_style('custom-styles', get_template_directory_uri() . '/style/css/style.css' );
+	wp_enqueue_style('custom-styles', get_template_directory_uri() . '/style/bootstrap.min.css' );
+
+	// Hovedstilsett egenlaget
+	wp_enqueue_style('custom-styles-theme', get_template_directory_uri() . '/style/style.css' );
 
 	wp_enqueue_script( 'cla-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'cla-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
-	wp_enqueue_script('twitter-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js') ;
+	wp_enqueue_script('twitter-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '1', true) ;
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -120,7 +123,7 @@ add_action( 'wp_enqueue_scripts', 'cla_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-//require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
